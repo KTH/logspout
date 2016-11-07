@@ -8,7 +8,7 @@ export GOPATH=/go
 go get
 go build -ldflags "-X main.Version $1" -o /bin/logspout
 apk del go git mercurial build-base
-apk add ca-certificates-20160104-r4
+apk add ca-certificates
 rm -rf /go
 rm -rf /var/cache/apk/*
 
