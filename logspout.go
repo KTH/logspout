@@ -27,7 +27,7 @@ func main() {
 		os.Exit(0)
 	}
 
-	fmt.Printf("# logspout %s by gliderlabs\n", Version)
+	fmt.Printf("# logspout %s by KTH (derived from gliderlabs)\n", Version)
 	fmt.Printf("# adapters: %s\n", strings.Join(router.AdapterFactories.Names(), " "))
 	fmt.Printf("# options : ")
 	if getopt("DEBUG", "") != "" {

@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     machine: true
-    working_directory: ~/.go_workspace/src/github.com/gliderlabs/
+    working_directory: ~/.go_workspace/src/github.com/kth/
     environment:
       DEBUG: true
-      GO_PROJECT: ../go/src/github.com/gliderlabs/$CIRCLE_PROJECT_REPONAME
+      GO_PROJECT: ../go/src/github.com/kth/$CIRCLE_PROJECT_REPONAME
     steps:
       - checkout
       - run: |

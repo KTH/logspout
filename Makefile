@@ -34,7 +34,7 @@ build:
 	docker save $(NAME):$(VERSION) | gzip -9 > build/$(NAME)_$(VERSION).tgz
 
 build-custom:
-	docker tag $(NAME):$(VERSION) gliderlabs/$(NAME):master
+	docker tag $(NAME):$(VERSION) kthse/$(NAME):master
 	cd custom && docker build -t $(NAME):custom .
 
 lint:
@@ -73,7 +73,7 @@ test-tls:
 test-custom:
 	docker run --name $(NAME)-custom $(NAME):custom || true
 	docker logs $(NAME)-custom | grep -q logstash
-	docker rmi gliderlabs/$(NAME):master || true
+	docker rmi kthse/$(NAME):master || true
 	docker rm $(NAME)-custom || true
 
 test-tls-custom:
@@ -90,7 +90,7 @@ release:
 	rm -rf release && mkdir release
 	go get github.com/progrium/gh-release/...
 	cp build/* release
-	gh-release create gliderlabs/$(NAME) $(VERSION) \
+	gh-release create kthse/$(NAME) $(VERSION) \
 		$(shell git rev-parse --abbrev-ref HEAD) $(VERSION)
 
 circleci:
