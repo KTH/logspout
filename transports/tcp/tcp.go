@@ -3,8 +3,8 @@ package tcp
 import (
 	"net"
 
-	"github.com/gliderlabs/logspout/adapters/raw"
-	"github.com/gliderlabs/logspout/router"
+	"github.com/kth/logspout/adapters/raw"
+	"github.com/kth/logspout/router"
 )
 
 func init() {
