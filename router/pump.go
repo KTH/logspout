@@ -375,11 +375,12 @@ func (cp *containerPump) send(msg *Message) {
 		select {
 		case logstream <- msg:
 		case <-time.After(time.Second * 60):
-			debug("pump.send(): send timeout, closing")
-			// normal call to remove() triggered by
-			// route.Closer() may not be able to grab
-			// lock under heavy load, so we delete here
-			defer delete(cp.logstreams, logstream)
+			// This is a modification from gliderlabs. We increase
+			// the timeout and abort the container in case we block
+			// for longer than 60s, expecting docker to restart the
+			// container. /fjo 20170610
+			log.Println("pump.send(): send timeout, exiting")
+			os.Exit(500)
 		}
 	}
 }
