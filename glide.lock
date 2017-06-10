@@ -1,48 +1,88 @@
-hash: 1b25e45c33a1a8a0afd97c2b43e30882e6fcd7f0eb82a136896a0fdbc30adf62
-updated: 2016-07-08T17:33:18.562222083-04:00
+hash: 3a29dd5397bcb0e2004e1d7e76c002bb2f80c35b65e7e710bb1bdb20939a76cb
+updated: 2017-06-10T18:15:07.603499782+02:00
 imports:
-- name: github.com/docker/docker
-  version: ad969f1aa782478725a7f338cf963fa82f484609
+- name: github.com/Azure/go-ansiterm
+  version: fa152c58bc15761d0200cb75fe958b89a9d4888e
   subpackages:
+  - winterm
+- name: github.com/docker/docker
+  version: 3f6b6c2981aa231823c51ed84ee0f89d81105c5b
+  subpackages:
+  - api/types
+  - api/types/blkiodev
+  - api/types/container
+  - api/types/filters
+  - api/types/mount
+  - api/types/network
+  - api/types/registry
+  - api/types/strslice
+  - api/types/swarm
+  - api/types/versions
   - opts
   - pkg/archive
   - pkg/fileutils
   - pkg/homedir
-  - pkg/stdcopy
   - pkg/idtools
   - pkg/ioutils
+  - pkg/jsonlog
+  - pkg/jsonmessage
+  - pkg/longpath
+  - pkg/mount
   - pkg/pools
   - pkg/promise
+  - pkg/stdcopy
   - pkg/system
-  - pkg/longpath
-- name: github.com/docker/engine-api
-  version: 98348ad6f9c89bb10f31ac32cd1b12cbadd292b6
+  - pkg/term
+  - pkg/term/windows
+- name: github.com/docker/go-connections
+  version: e15c02316c12de00874640cd76311849de2aeed5
   subpackages:
-  - types/filters
-  - types/versions
+  - nat
 - name: github.com/docker/go-units
-  version: f2d77a61e3c169b43402a0a1e84f06daf29b8190
+  version: 0dadbb0345b35ec7ef35e228dabb8de89a65bf52
 - name: github.com/fsouza/go-dockerclient
-  version: 1a3d0cfd7814bbfe44ada7617654948c99891749
+  version: c933ed18bef34ec2955de03de8ef9a3bb996e3df
+- name: github.com/gliderlabs/logspout
+  version: ef8ad82728badc23b0f4af198bb3167ae792f1e6
+  subpackages:
+  - router
 - name: github.com/gorilla/context
-  version: aed02d124ae4a0e94fea4541c8effd05bf0c8296
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
 - name: github.com/gorilla/mux
-  version: 9fa818a44c2bf1396a17f9d5a3c0f6dd39d2ff8e
+  version: 18fca31550181693b3a834a15b74b564b3605876
 - name: github.com/hashicorp/go-cleanhttp
-  version: ad28ea4487f05916463e2423a55166280e8254b5
+  version: 3573b8b52aa7b37b9358d966a898feb387f62437
+- name: github.com/looplab/logspout-logstash
+  version: e00429eefff88ecbaa2ed8a662463eaeb1474e81
+- name: github.com/Microsoft/go-winio
+  version: f533f7a102197536779ea3a8cb881d639e21ec5a
+- name: github.com/Nvveen/Gotty
+  version: cd527374f1e5bff4938207604a14f2e38a9cf512
+- name: github.com/opencontainers/go-digest
+  version: 279bed98673dd5bef374d3b6e4b09e2af76183bf
+- name: github.com/opencontainers/image-spec
+  version: df6f3c57dafbbf39d98c24fa6ab509183cfa3efc
+  subpackages:
+  - specs-go
+  - specs-go/v1
 - name: github.com/opencontainers/runc
-  version: 9d7831e41d3ef428b67685eeb27f2b4a22a92391
+  version: ea35825a6350511ab93fe24e69c0723d6728616d
   subpackages:
+  - libcontainer/system
   - libcontainer/user
+- name: github.com/pkg/errors
+  version: c605e284fe17294bda444b34710735b29d1a9d90
 - name: github.com/Sirupsen/logrus
-  version: f3cfb454f4c209e6668c95216c4744b8fddb2356
+  version: 85b1699d505667d13f8ac4478c1debbf85d6c5de
 - name: golang.org/x/net
-  version: f841c39de738b1d0df95b5a7187744f0e03d8112
+  version: 1a68b1313cf4ad7778376e82641197b60c02f65c
   subpackages:
-  - websocket
   - context
+  - context/ctxhttp
+  - websocket
 - name: golang.org/x/sys
-  version: a408501be4d17ee978c04a618e7a1b22af058c0e
+  version: 0b25a408a50076fbbcae6b7ac0ea5fbb0b085e79
   subpackages:
   - unix
-devImports: []
+  - windows
+testImports: []
